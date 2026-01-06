@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>شيكه نيكه</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff0000, hsl(0, 0%, 0%));
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      width: 300px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    #excuse {
+      font-size: 18px;
+      margin: 20px 0;
+      min-height: 50px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #003cff;
+      color: #333;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .copy {
+      margin-top: 10px;
+      background: #000000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>البابا علي بيمسي </h1>
+    <div id="excuse">دوس لو جدع 👇</div>
+    <button onclick="generateExcuse()">Generate Excuse</button>
+    <br />
+    <button class="copy" onclick="copyExcuse()">Copy</button>
+  </div>
+
+  <script>
+    const excuses = [
+      "زبي فيك  🌴",
+      "I fell asleep accidentally… for 6 hours 😴",
+      "My laptop needed emotional support 💻",
+      "I was mentally present, physically absent 🤯",
+      "My alarm clock betrayed me ⏰",
+      "I was doing important nothing 🤡",
+      "The universe said no 🌌"
+    ];
+
+    function generateExcuse() {
+      const randomIndex = Math.floor(Math.random() * excuses.length);
+      document.getElementById("excuse").innerText = excuses[randomIndex];
+    }
+
+    function copyExcuse() {
+      const text = document.getElementById("excuse").innerText;
+      if (text === "Click the button 👇") return;
+      navigator.clipboard.writeText(text);
+      alert("Excuse copied 😎");
+    }
+  </script>
+
+</body>
+</html>
